@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+if [ ! -e "/config/Library" ]
+then
+    rm -rf /config/Library
+    aws s3 cp s3://$BUCKET/Snapshots/plex_db.tar.gz /tmp/plex_db.tar.gz --region $REGION
+    tar -xf /tmp/plex_db.tar.gz -C /config/
+fi

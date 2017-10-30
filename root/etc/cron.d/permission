@@ -1,0 +1,1 @@
+15 */4 * * * root /usr/local/bin/python /scripts/permission.py

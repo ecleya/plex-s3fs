@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+exec s3fs -f $BUCKET:/Plex /data -o passwd_file=/passwd-s3fs -o allow_other
