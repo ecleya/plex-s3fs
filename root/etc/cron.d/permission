@@ -1,1 +1,1 @@
-15 */4 * * * root /usr/local/bin/python /scripts/permission.py
+15 */2 * * * root /usr/local/bin/python /scripts/permission.py
