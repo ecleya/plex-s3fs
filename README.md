@@ -30,4 +30,4 @@ plex-s3fs
 * `-v <path/to/transcode/temp>:/transcode`: Recommended. For performance reason.
 
 ### Media data
-plex-s3fs searchs media in `s3://<BUCKET>/Plex`.
+plex-s3fs searches media in `s3://<BUCKET>/Plex`.
