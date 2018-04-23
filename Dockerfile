@@ -23,8 +23,6 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 RUN pyenv install 3.6.4
 RUN pyenv global 3.6.4
 
-RUN pip install pyfileinfo
-
 # install s3fs
 RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git && \
     cd s3fs-fuse && \
