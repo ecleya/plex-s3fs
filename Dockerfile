@@ -26,14 +26,14 @@ RUN pyenv global 3.6.4
 RUN pip install pyfileinfo
 
 # install s3fs
-RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git && \
-    cd s3fs-fuse && \
+RUN curl -L https://github.com/s3fs-fuse/s3fs-fuse/archive/v1.83.tar.gz | tar -xz && \
+    cd s3fs-fuse-1.83 && \
     ./autogen.sh && \
     ./configure && \
     make && \
     make install && \
     cd .. && \
-    rm -rf s3fs-fuse
+    rm -rf s3fs-fuse-1.83
 
 # upgrade s6 overlay
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.1.1/s6-overlay-amd64.tar.gz /tmp/
