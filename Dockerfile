@@ -13,13 +13,15 @@ ENV LC_ALL=en_US.utf8
 ENV LANGUAGE=en_US.utf8
 
 # install python3
-RUN git clone git://github.com/yyuu/pyenv.git /tmp/pyenv && \
-    cd /tmp/pyenv/plugins/python-build && \
-    ./install.sh && \
-    rm -rf /tmp/pyenv
+RUN git clone git://github.com/yyuu/pyenv.git .pyenv
+RUN git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
-RUN python-build 3.6.3 /usr/local/share/python-3.6.3
-RUN bash -c "ln -s /usr/local/share/python-3.6.3/bin/{2to3,easy_install,idle,idle3.6,pip3,pydoc,pydoc3.6,python-config,python3-config,python3.6-config,python3.6m-config,pyvenv-3.6,2to3-3.6,easy_install-3.6,idle3,pip,pip3.6,pydoc3,python,python3,python3.6,python3.6m,pyvenv} /usr/local/bin"
+ENV HOME /
+ENV PYENV_ROOT $HOME/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+
+RUN pyenv install 3.6.4
+RUN pyenv global 3.6.4
 
 RUN pip install pyfileinfo
 
