@@ -34,7 +34,7 @@ RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git && \
     rm -rf s3fs-fuse
 
 # upgrade s6 overlay
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.1.1/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-amd64.tar.gz /tmp/
 RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 
 COPY root/ /
