@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+if [[ -z "${S3_URL}" ]]; then
+  exec s3fs -f $OLD_BUCKET:/Plex /old_data -o passwd_file=/passwd-s3fs -o allow_other -o endpoint=$OLD_REGION
+else
+  exec s3fs -f $OLD_BUCKET:/Plex /old_data -o passwd_file=/passwd-s3fs -o allow_other -o url=$S3_URL -o endpoint=$OLD_REGION
+fi

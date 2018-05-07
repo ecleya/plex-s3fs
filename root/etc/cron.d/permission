@@ -1,1 +1,1 @@
-15 */4 * * * root /.pyenv/shims/python /scripts/permission.py
+0 0 * * * root /.pyenv/shims/python /scripts/permission.py
